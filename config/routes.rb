@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   
   get 'pages/home'
 
-  get 'pages/pizza'
+  get '/pizza', to: 'pages#pizza'
 
-  get 'pages/appetizers'
+  get '/appetizers', to: 'pages#appetizers'
 
-  get 'pages/calzones'
+  get  '/calzones', to: 'pages#calzones'
 
-  get 'pages/subs'
+  get '/subs', to: 'pages#subs'
 
   get 'home/pizza'
 
