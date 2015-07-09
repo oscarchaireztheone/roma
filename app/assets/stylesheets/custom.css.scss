@@ -1,5 +1,6 @@
 /*somestuff*/
 @import "bootstrap";
+
 .header1 {
 	margin: 0;
 	width: 900px;
@@ -7,6 +8,7 @@
 }
 .pic1 {
 	width: 100%;
+	position:relative;
 }
 .ImageLeftWrap {
 	float: right;
@@ -26,5 +28,27 @@
 	width: 60%;
 	margin-left:auto;
 	margin-right:auto;
+}
+.floatl {
 	
+	float: left;
+}
+.map {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	z_index: 2;
+}
+.map1 {
+	background-color: white;
+	width: auto;
+	height: auto;
+	padding: 5px 5px;
+	position: absolute;
+	left: 40px;
+	top: 15px;
+	z-index: 99;
+}
+p {
+	font-size: 14px;
 }
