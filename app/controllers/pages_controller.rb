@@ -13,4 +13,6 @@ class PagesController < ApplicationController
 
   def subs
   end
+  
+
 end
