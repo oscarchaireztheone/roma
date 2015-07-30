@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'home/appetizers'
 
   get 'home/subs'
+  
+  get 'pages/full_menu', as: 'full_menu'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
