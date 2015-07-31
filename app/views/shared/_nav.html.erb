@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="main_nav_container">
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,14 +34,17 @@
 	      </ul>
 
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">(919)550-7070</a></li>
+	        <li><a href="#"><%= closer_store.eql?(:durham) ? "(919)555-5555" : "(919)550-7070" %></a></li>
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Address <span class="caret"></span></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= closer_store.eql?(:durham) ? "Durham" : "Clayton" %><span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="https://maps.google.com/maps?ll=35.664466,-78.210854&z=10&t=m&hl=en&gl=US&mapclient=embed&q=50%20Neuse%20River%20Pkwy%2C%20Suite%209%20clayton%2C%20nc">50 Neuse River Pkwy, Suite 9
-					Clayton, NC 27527</a></li>
+	            <li>
+	             <a href="<%= Store::CLAYTON_STORE_MAPS_LINK %>">
+	              50 Neuse River Pkwy, Suite 9 Clayton, NC 27527
+					    </a>
+					  </li>
 	            <li role="separator" class="divider"></li>
-	            <li><%= link_to "Store in Durham, NC 27701", root_path %></li>
+	            <li><%= link_to "Store in Durham, NC 27701", switch_store_path(:durham), remote: true %></li>
 	          </ul>
 	        </li>
 	      </ul>
