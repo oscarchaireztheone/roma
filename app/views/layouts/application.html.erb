@@ -14,8 +14,9 @@
 </head>
 
 <body class="site">
-	<%=render "shared/header"%>
-	<%= render "shared/nav"%>
+	<%= render "shared/header" %>
+	<div id="nav_anchor"></div>
+	<%= render "shared/nav" %>
 	<div class="container">
 		<div class="content">
 	    <%= yield %>
@@ -23,7 +24,7 @@
 	</div>
 
 	<div class= "container">
-	  <%=render "shared/footer" %>
+	  <%= render "shared/footer" %>
   </div>
 
 </body>

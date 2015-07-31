@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   get 'home/subs'
   
+  # menu paths
   get 'menus/full_menu', as: 'full_menu'
+  get 'menus/switch_store/:store', to: 'menus#switch_store', as: 'switch_store'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
