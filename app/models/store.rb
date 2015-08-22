@@ -3,19 +3,31 @@ class Store < ActiveRecord::Base
   CLAYTON_STORE = [35.649363, -78.394231]
   DURHAM_STORE = [35.994033, -78.898619]
   
-    def self.closer_store ip
-    store1 = Store::CLAYTON_STORE
-    store2 = Store::DURHAM_STORE
+  def self.closer_store_by_zip zip
+    geo = Geocoder.search(zip.to_s)
+    if geo and geo.first
+      geo = geo.first.coordinates
+      return self.closer(geo.first, geo.last)
+    end
+  end
+
+  def self.closer_store ip
     geoip = GeoIP.new('GeoLiteCity.dat').city(ip.to_s)
     if defined? geoip and geoip
-      if geoip.latitude and geoip.longitude
-        current = [geoip.latitude, geoip.longitude]
-        if GeoDistance::Haversine.distance(current[0], current[1], store1[0], store1[1]).miles.number > \
-          GeoDistance::Haversine.distance(current[0], current[1], store2[0], store2[1]).miles.number
-          return :durham
-        else
-          return :clayton
-        end
+      return self.closer(geoip.latitude, geoip.longitude)
+    end
+  end
+  
+  def self.closer latitude, longitude
+    store1 = Store::CLAYTON_STORE
+    store2 = Store::DURHAM_STORE
+    if latitude and longitude
+      current = [latitude, longitude]
+      if GeoDistance::Haversine.distance(current[0], current[1], store1[0], store1[1]).miles.number > \
+        GeoDistance::Haversine.distance(current[0], current[1], store2[0], store2[1]).miles.number
+        return :durham
+      else
+        return :clayton
       end
     end
   end
