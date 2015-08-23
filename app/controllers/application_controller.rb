@@ -6,7 +6,10 @@ class ApplicationController < ActionController::Base
   helper_method :closer_store
 
   def closer_store
-    Store.closer_store request.remote_ip
+    if cookies[:closer_store_by_zip]
+      return cookies[:closer_store_by_zip].to_sym
+    else
+      return Store.closer_store(request.remote_ip)
+    end
   end
-
 end

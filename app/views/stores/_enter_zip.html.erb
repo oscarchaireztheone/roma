@@ -1,0 +1,6 @@
+<!-- stores -->
+
+<%= form_tag enter_zip_path, method: :get do |f| %>
+	<%= text_field_tag :zip, nil, placeholder: "Enter your zip code here" %>
+	<%= submit_tag "Enter" %>
+<% end %>

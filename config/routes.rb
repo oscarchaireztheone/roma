@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   # menu paths
   get 'menus/full_menu', as: 'full_menu'
   get 'menus/switch_store/:store', to: 'menus#switch_store', as: 'switch_store'
+  
+  # store paths
+  get 'stores/enter_zip/:zip', to: 'stores#enter_zip', as: 'enter_zip'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
