@@ -1,4 +1,4 @@
-<div class="container" id="main_nav_container">
+<div class="container" id="main_nav_container" style="font-size: 115%">
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -17,18 +17,18 @@
 	      <ul class="nav navbar-nav">
 	        <li ><a href=<%=pizza_path%>>Pizza <span class="sr-only">(current)</span></a></li>
 	        <li><a href=<%=appetizers_path%>>Appetizers</br>Wings & Salads</a></li>
-	        <!--<li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deserts <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
+	            <li><a href=<%=desserts_path%>>Desserts</a></li>
+	            <li><%= link_to "Full Menue", full_menu_path %></li>
+	            <!--<li><a href="#">Something else here</a></li>
 	            <li role="separator" class="divider"></li>
 	            <li><a href="#">Separated link</a></li>
 	            <li role="separator" class="divider"></li>
-	            <li><a href="#">One more separated link</a></li>
+	            <li><a href="#">One more separated link</a></li>-->
 	          </ul>
-	        </li>-->
+	        </li>
 			<li><a href=<%=calzones_path%>>Calzones </br>Pasta</a></li>
 			<li><a href=<%=subs_path%>>Subs</br>Specials</a></li>
 	      </ul>

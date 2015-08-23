@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/appetizers', to: 'pages#appetizers'
 
   get  '/calzones', to: 'pages#calzones'
+  
+  get  '/desserts', to: 'pages#desserts'
 
   get '/subs', to: 'pages#subs'
 

@@ -64,7 +64,7 @@ p {
 .underline {
 	text-decoration: underline;
 }
-@media (max-width: 768px) {
+@media (max-width: 999px) {
     .navbar-header {
         float: none;
     }
@@ -99,4 +99,8 @@ p {
     .collapse.in{
   		display:block !important;
 	}
+}
+.phoneNum {
+	text-align: center;
+	color: white;
 }
