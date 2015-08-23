@@ -1,1 +1,14 @@
-<div class="container phoneNum"><h1>*<%= closer_store.eql?(:durham) ? "(919)555-5555" : "(919)550-7070" %>*</h1></div>
+<div class="container phoneNum">
+	<h1>
+		*<%= closer_store.eql?(:durham) ? "(919)555-5555" : "(919)550-7070" %>*
+	</h1>
+</div>
+
+<% unless cookies[:closer_store_by_zip] %>
+	<div align="center">
+		<%= render "stores/enter_zip" %>
+	</div>
+	<br>
+<% end %>
+
+
