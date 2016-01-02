@@ -21,7 +21,7 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deserts <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href=<%=desserts_path%>>Desserts</a></li>
-	            <li><%= link_to "Full Menue", full_menu_path %></li>
+	            <li><%= link_to "Full Menu", full_menu_path %></li>
 	            <!--<li><a href="#">Something else here</a></li>
 	            <li role="separator" class="divider"></li>
 	            <li><a href="#">Separated link</a></li>
@@ -34,7 +34,7 @@
 	      </ul>
 
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#"><%= closer_store.eql?(:durham) ? "(919)555-5555" : "(919)550-7070" %></a></li>
+	        <li><a href="#"><%= closer_store.eql?(:durham) ? "(919)957-9662" : "(919)550-7070" %></a></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= closer_store.eql?(:durham) ? "Durham" : "Clayton" %><span class="caret"></span></a>
 	          <ul class="dropdown-menu">
@@ -44,7 +44,11 @@
 					    </a>
 					  </li>
 	            <li role="separator" class="divider"></li>
-	            <li><%= link_to "Store in Durham, NC 27701", switch_store_path(:durham), remote: true %></li>
+	           <li>
+  	             <a href="<%= Store::DURHAM_STORE_MAPS_LINK %>">
+  	              121 Sherron Rd, Suite 301 Durham, NC 27703
+  					    </a>
+				   <!--<%= link_to "Store in Durham, NC 27701", switch_store_path(:durham), remote: true %>--></li>
 	          </ul>
 	        </li>
 	      </ul>
