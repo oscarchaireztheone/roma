@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get  '/desserts', to: 'pages#desserts'
 
   get '/subs', to: 'pages#subs'
+  
+  get '/specials', to: 'pages#specials'
 
   get 'home/pizza'
 

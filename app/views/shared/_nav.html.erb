@@ -30,23 +30,24 @@
 	          </ul>
 	        </li>
 			<li><a href=<%=calzones_path%>>Calzones </br>Pasta</a></li>
-			<li><a href=<%=subs_path%>>Subs</br>Specials</a></li>
+			<li><a href=<%=subs_path%>>Subs</a></li>
+			<li><a href=<%=specials_path%>>Specials</a></li>
+			<li><%= link_to "Full Menu", full_menu_path %></li>
 	      </ul>
 
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#"><%= closer_store.eql?(:durham) ? "(919)957-7662" : "(919)550-7070" %></a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= closer_store.eql?(:durham) ? "Durham" : "Clayton" %><span class="caret"></span></a>
+	        
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= closer_store.eql?(:durham) ? "Store" : "Store" %><span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li>
 	             <a href="<%= Store::CLAYTON_STORE_MAPS_LINK %>">
-	              50 Neuse River Pkwy, Suite 9 Clayton, NC 27527
+	              Clayton (919) 550-7070
 					    </a>
 					  </li>
 	            <li role="separator" class="divider"></li>
 	           <li>
   	             <a href="<%= Store::DURHAM_STORE_MAPS_LINK %>">
-  	              121 Sherron Rd, Suite 301 Durham, NC 27703
+  	              Durham (919)957-7662
   					    </a>
 				   <!--<%= link_to "Store in Durham, NC 27701", switch_store_path(:durham), remote: true %>--></li>
 	          </ul>

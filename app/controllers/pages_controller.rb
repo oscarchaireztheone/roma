@@ -16,4 +16,7 @@ class PagesController < ApplicationController
   
   def dessert
   end
+  
+  def specials
+  end
 end
