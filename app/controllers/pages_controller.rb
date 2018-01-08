@@ -19,4 +19,8 @@ class PagesController < ApplicationController
   
   def specials
   end
+  
+  def test
+    
+  end
 end

@@ -1,0 +1,63 @@
+h1. GeoDistance - geo distance calculations
+
+Calculates the Geo distance between two locations using longitude and latitude. 
+This is done using "pure" Math formulas without resorting to Active Record or SQL DB functionality
+
+This gem is meant to be a replacement for those geo distance utils out there that use built in SQL DB functionality for their calculations!
+
+The formulas curently supported are
+
+* _Haversine_
+* _Spherical_
+* _Vincenty_
+
+h2. Install & Usage
+
+<pre>require 'geo-distance'
+
+it "should work" do
+  lon1 = -104.88544
+  lat1 = 39.06546
+
+  lon2 = -104.80
+  lat2 = lat1
+
+  dist = GeoDistance::Haversine.distance( lat1, lon1, lat2, lon2 )
+
+  puts "the distance from  #{lat1}, #{lon1} to #{lat2}, #{lon2} is: #{dist[:meters].number} meters"
+
+  puts "#{dist[:feet]}"
+  puts "#{dist.meters}"
+  puts "#{dist[:km]}"
+  puts "#{dist[:miles]}"
+  dist[:km].to_s.should match(/7\.376*/)
+end  
+</pre>
+
+h3. Setting default algorithm
+
+You can also set a default algorithm to use...
+The following will use the _Haversine_ algorithm:
+
+<pre>
+  GeoDistance.default_algorithm = :haversine
+  dist = GeoDistance.distance( lat1, lon1, lat2, lon2 )  
+</pre>
+
+GeoDistance is used in the "geo_magic":https://github.com/kristianmandrup/geo_magic gem
+
+h2. Contributing to geo-distance
+ 
+* Check out the specs and add specs to spec any added features or changes!
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+h2. Copyright
+
+Copyright (c) 2011 Kristian Mandrup. See LICENSE.txt for
+further details.
+

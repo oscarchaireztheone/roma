@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'home/subs'
   
+  get 'pages/test', as: 'test'
+  
   # menu paths
   get 'menus/full_menu', as: 'full_menu'
   get 'menus/switch_store/:store', to: 'menus#switch_store', as: 'switch_store'
