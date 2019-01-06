@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'sprockets-rails'
 gem 'bootstrap-sass'
 
